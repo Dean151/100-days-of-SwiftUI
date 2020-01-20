@@ -1,8 +1,8 @@
 //
 //  SceneDelegate.swift
-//  TempConverter
+//  WordScramble
 //
-//  Created by Thomas DURAND on 17/01/2020.
+//  Created by Thomas DURAND on 20/01/2020.
 //  Copyright © 2020 Thomas DURAND. All rights reserved.
 //
 
@@ -20,7 +20,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
 
         // Create the SwiftUI view that provides the window contents.
-        let contentView = TemperatureConverterView()
+        let contentView = ContentView()
 
         // Use a UIHostingController as window root view controller.
         if let windowScene = scene as? UIWindowScene {

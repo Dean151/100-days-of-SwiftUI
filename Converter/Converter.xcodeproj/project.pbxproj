@@ -9,21 +9,27 @@
 /* Begin PBXBuildFile section */
 		71C1FD0723D21D16003A68FF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C1FD0623D21D16003A68FF /* AppDelegate.swift */; };
 		71C1FD0923D21D16003A68FF /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C1FD0823D21D16003A68FF /* SceneDelegate.swift */; };
-		71C1FD0B23D21D16003A68FF /* TemperatureConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C1FD0A23D21D16003A68FF /* TemperatureConverterView.swift */; };
+		71C1FD0B23D21D16003A68FF /* ConverterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C1FD0A23D21D16003A68FF /* ConverterView.swift */; };
 		71C1FD0D23D21D18003A68FF /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71C1FD0C23D21D18003A68FF /* Assets.xcassets */; };
 		71C1FD1023D21D18003A68FF /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 71C1FD0F23D21D18003A68FF /* Preview Assets.xcassets */; };
 		71C1FD1323D21D18003A68FF /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 71C1FD1123D21D18003A68FF /* LaunchScreen.storyboard */; };
+		71C1FD1C23D5B772003A68FF /* UnitSelectorView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C1FD1B23D5B772003A68FF /* UnitSelectorView.swift */; };
+		71C1FD1F23D5B7C9003A68FF /* Converter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C1FD1E23D5B7C9003A68FF /* Converter.swift */; };
+		71C1FD2123D5BDD6003A68FF /* DimensionSelector.swift in Sources */ = {isa = PBXBuildFile; fileRef = 71C1FD2023D5BDD6003A68FF /* DimensionSelector.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		71C1FD0323D21D16003A68FF /* TempConverter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TempConverter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		71C1FD0323D21D16003A68FF /* Converter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Converter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		71C1FD0623D21D16003A68FF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		71C1FD0823D21D16003A68FF /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		71C1FD0A23D21D16003A68FF /* TemperatureConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TemperatureConverterView.swift; sourceTree = "<group>"; };
+		71C1FD0A23D21D16003A68FF /* ConverterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ConverterView.swift; path = ../ConverterView.swift; sourceTree = "<group>"; };
 		71C1FD0C23D21D18003A68FF /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		71C1FD0F23D21D18003A68FF /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		71C1FD1223D21D18003A68FF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		71C1FD1423D21D18003A68FF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		71C1FD1B23D5B772003A68FF /* UnitSelectorView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UnitSelectorView.swift; sourceTree = "<group>"; };
+		71C1FD1E23D5B7C9003A68FF /* Converter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Converter.swift; sourceTree = "<group>"; };
+		71C1FD2023D5BDD6003A68FF /* DimensionSelector.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DimensionSelector.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -40,7 +46,7 @@
 		71C1FCFA23D21D16003A68FF = {
 			isa = PBXGroup;
 			children = (
-				71C1FD0523D21D16003A68FF /* TempConverter */,
+				71C1FD0523D21D16003A68FF /* Converter */,
 				71C1FD0423D21D16003A68FF /* Products */,
 			);
 			sourceTree = "<group>";
@@ -48,23 +54,24 @@
 		71C1FD0423D21D16003A68FF /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				71C1FD0323D21D16003A68FF /* TempConverter.app */,
+				71C1FD0323D21D16003A68FF /* Converter.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		71C1FD0523D21D16003A68FF /* TempConverter */ = {
+		71C1FD0523D21D16003A68FF /* Converter */ = {
 			isa = PBXGroup;
 			children = (
+				71C1FD1D23D5B7BD003A68FF /* Models */,
+				71C1FD1A23D5B75D003A68FF /* Views */,
 				71C1FD0623D21D16003A68FF /* AppDelegate.swift */,
 				71C1FD0823D21D16003A68FF /* SceneDelegate.swift */,
-				71C1FD0A23D21D16003A68FF /* TemperatureConverterView.swift */,
 				71C1FD0C23D21D18003A68FF /* Assets.xcassets */,
 				71C1FD1123D21D18003A68FF /* LaunchScreen.storyboard */,
 				71C1FD1423D21D18003A68FF /* Info.plist */,
 				71C1FD0E23D21D18003A68FF /* Preview Content */,
 			);
-			path = TempConverter;
+			path = Converter;
 			sourceTree = "<group>";
 		};
 		71C1FD0E23D21D18003A68FF /* Preview Content */ = {
@@ -75,12 +82,30 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		71C1FD1A23D5B75D003A68FF /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				71C1FD2023D5BDD6003A68FF /* DimensionSelector.swift */,
+				71C1FD0A23D21D16003A68FF /* ConverterView.swift */,
+				71C1FD1B23D5B772003A68FF /* UnitSelectorView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		71C1FD1D23D5B7BD003A68FF /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				71C1FD1E23D5B7C9003A68FF /* Converter.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		71C1FD0223D21D16003A68FF /* TempConverter */ = {
+		71C1FD0223D21D16003A68FF /* Converter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 71C1FD1723D21D18003A68FF /* Build configuration list for PBXNativeTarget "TempConverter" */;
+			buildConfigurationList = 71C1FD1723D21D18003A68FF /* Build configuration list for PBXNativeTarget "Converter" */;
 			buildPhases = (
 				71C1FCFF23D21D16003A68FF /* Sources */,
 				71C1FD0023D21D16003A68FF /* Frameworks */,
@@ -90,9 +115,9 @@
 			);
 			dependencies = (
 			);
-			name = TempConverter;
+			name = Converter;
 			productName = TempConverter;
-			productReference = 71C1FD0323D21D16003A68FF /* TempConverter.app */;
+			productReference = 71C1FD0323D21D16003A68FF /* Converter.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -110,7 +135,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 71C1FCFE23D21D16003A68FF /* Build configuration list for PBXProject "TempConverter" */;
+			buildConfigurationList = 71C1FCFE23D21D16003A68FF /* Build configuration list for PBXProject "Converter" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -123,7 +148,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				71C1FD0223D21D16003A68FF /* TempConverter */,
+				71C1FD0223D21D16003A68FF /* Converter */,
 			);
 		};
 /* End PBXProject section */
@@ -147,8 +172,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				71C1FD0723D21D16003A68FF /* AppDelegate.swift in Sources */,
+				71C1FD2123D5BDD6003A68FF /* DimensionSelector.swift in Sources */,
+				71C1FD1C23D5B772003A68FF /* UnitSelectorView.swift in Sources */,
 				71C1FD0923D21D16003A68FF /* SceneDelegate.swift in Sources */,
-				71C1FD0B23D21D16003A68FF /* TemperatureConverterView.swift in Sources */,
+				71C1FD1F23D5B7C9003A68FF /* Converter.swift in Sources */,
+				71C1FD0B23D21D16003A68FF /* ConverterView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,15 +313,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"TempConverter/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Converter/Preview Content\"";
 				DEVELOPMENT_TEAM = 6EL5V5QVB4;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = TempConverter/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Converter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = fr.thomasdurand.TempConverter;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.thomasdurand.Converter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -305,15 +333,15 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_ASSET_PATHS = "\"TempConverter/Preview Content\"";
+				DEVELOPMENT_ASSET_PATHS = "\"Converter/Preview Content\"";
 				DEVELOPMENT_TEAM = 6EL5V5QVB4;
 				ENABLE_PREVIEWS = YES;
-				INFOPLIST_FILE = TempConverter/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/Converter/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = fr.thomasdurand.TempConverter;
+				PRODUCT_BUNDLE_IDENTIFIER = fr.thomasdurand.Converter;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -323,7 +351,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		71C1FCFE23D21D16003A68FF /* Build configuration list for PBXProject "TempConverter" */ = {
+		71C1FCFE23D21D16003A68FF /* Build configuration list for PBXProject "Converter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				71C1FD1523D21D18003A68FF /* Debug */,
@@ -332,7 +360,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		71C1FD1723D21D18003A68FF /* Build configuration list for PBXNativeTarget "TempConverter" */ = {
+		71C1FD1723D21D18003A68FF /* Build configuration list for PBXNativeTarget "Converter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				71C1FD1823D21D18003A68FF /* Debug */,

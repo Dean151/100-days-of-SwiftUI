@@ -12,25 +12,23 @@ struct ContentView: View {
     @State private var countries = ["Estonia", "France", "Germany", "Ireland", "Italy", "Nigeria", "Poland", "Russia", "Spain", "UK", "US"].shuffled()
     @State private var correctAnswer = Int.random(in: 0...2)
 
-    @State private var showingScore = false
-    @State private var scoreTitle = ""
-    @State private var scoreMessage = ""
     @State private var score = 0
+    @State private var animating: Int?
 
     func flagTapped(_ number: Int) {
         if number == correctAnswer {
             score += 1
-            scoreTitle = "Correct"
-            scoreMessage = "Your score is \(score)"
-        } else {
-            scoreTitle = "Wrong"
-            scoreMessage = "That's the flag of \(countries[number])"
         }
-
-        showingScore = true
+        withAnimation {
+            self.animating = number
+        }
+        DispatchQueue.main.asyncAfter(deadline: .now() + .seconds(2)) {
+            self.askQuestion()
+        }
     }
 
     func askQuestion() {
+        animating = nil
         countries.shuffle()
         correctAnswer = Int.random(in: 0...2)
     }
@@ -47,17 +45,7 @@ struct ContentView: View {
                         .fontWeight(.black)
                 }
 
-                ForEach(0 ..< 3) { number in
-                    Button(action: {
-                       self.flagTapped(number)
-                    }) {
-                        Image(self.countries[number])
-                            .renderingMode(.original)
-                            .clipShape(Capsule())
-                            .overlay(Capsule().stroke(Color.black, lineWidth: 1))
-                            .shadow(color: .black, radius: 2)
-                    }
-                }
+                ForEach(0 ..< 3, content: self.flag)
 
                 Spacer()
 
@@ -65,11 +53,24 @@ struct ContentView: View {
             }
         }
         .foregroundColor(.white)
-        .alert(isPresented: $showingScore) {
-            Alert(title: Text(scoreTitle), message: Text(scoreMessage), dismissButton: .default(Text("Continue")) {
-                self.askQuestion()
-            })
+    }
+
+    func flag(for number: Int) -> some View {
+        Button(action: {
+           self.flagTapped(number)
+        }) {
+            Image(self.countries[number])
+                .renderingMode(.original)
+                .clipShape(Capsule())
+                .overlay(Capsule().stroke(Color.black, lineWidth: 1))
+                .shadow(color: .black, radius: 2)
         }
+        .rotation3DEffect(
+            .degrees(number == self.correctAnswer && self.animating == number ? 360 : 0),
+            axis: (x: 0, y: 1, z: 0)
+        )
+        .disabled(self.animating != nil)
+        .opacity(self.animating != nil && number != self.correctAnswer ? 0.25 : 1)
     }
 }
 

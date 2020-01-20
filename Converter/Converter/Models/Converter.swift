@@ -7,11 +7,20 @@
 //
 
 import Foundation
+import SwiftUI
 
 protocol Converter {
     associatedtype T: Dimension
     var name: String { get }
     var units: [T] { get }
+}
+
+extension Converter {
+    var row: some View {
+        return NavigationLink(destination: AnyView(ConverterView(converter: self))) {
+            Text(name)
+        }
+    }
 }
 
 struct Duration: Converter {
